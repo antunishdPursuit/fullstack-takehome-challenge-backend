@@ -13,10 +13,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send({Data: "Service is Running"});
 });
-
-// movies ROUTES
+ 
+// Raffle ROUTES
 const rafflesController = require("./controllers/rafflesController");
-app.use("/raffles", rafflesController);
+app.use("/api/raffles", rafflesController);
 
 // EXPORT
 module.exports = app;
