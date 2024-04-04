@@ -36,3 +36,21 @@ VALUES
     ('Noah', 'Clark', 'noah.clark@example.com', '7897897890'),
     ('Charlotte', 'Lewis', 'charlotte.lewis@example.com', '1010101010');
 
+INSERT INTO joined_raffle (raffle_id, participant_id)
+VALUES
+    (1, 1),
+    (1, 2),
+    (1, 3),
+    (2, 4),
+    (2, 5),
+    (2, 6),
+    (3, 7),
+    (3, 8),
+    (3, 9),
+    (4, 10),
+    (4, 11),
+    (4, 12),
+    (5, 13),
+    (5, 14),
+    (5, 15);
+

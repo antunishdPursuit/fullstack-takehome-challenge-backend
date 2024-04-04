@@ -18,8 +18,18 @@ const createRaffle = async (raffle) => {
     const newRaffle = await db.oneOrNone("INSERT INTO raffles (raffle_name, secret_token) VALUES ($1, $2) RETURNING *;",[raffle_name, secret_token])
     return newRaffle
 }
+
+// GET ALL Participants for one raffle
+
+const getOneRaffleWithAllParticipants = async (id) => {
+    const oneRaffleWithAllParticipants = await db.any(
+        "SELECT * FROM participants JOIN joined_raffle ON participants.id = joined_raffle.participant_id WHERE joined_raffle.raffle_id = $1", id)
+    return oneRaffleWithAllParticipants
+}
+
 module.exports = {
   getAllRaffles,
   getOneRaffle,
-  createRaffle
+  createRaffle,
+  getOneRaffleWithAllParticipants
 };

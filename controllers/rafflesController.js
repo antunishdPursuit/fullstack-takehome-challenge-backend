@@ -4,6 +4,7 @@ const {
   getAllRaffles,
   getOneRaffle,
   createRaffle,
+  getOneRaffleWithAllParticipants,
 } = require("../queries/raffles.js");
 
 // GET all raffles /api/raffles
@@ -37,6 +38,21 @@ raffles.post('/', async (req, res) => {
         const createdRaffle = await createRaffle(req.body)
         res.status(200).json(createdRaffle);
     } catch (error) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// GET one raffle with all participants /api/raffles/:id/participants
+raffles.get('/:id/participants', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const oneRaffleWithAllParticipants = await getOneRaffleWithAllParticipants(Number(id));
+        if (oneRaffleWithAllParticipants) {
+            res.status(200).json(oneRaffleWithAllParticipants);
+        } else {
+            res.status(404).json({ data: `No raffle with id ${id}` });
+        }
+    } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
