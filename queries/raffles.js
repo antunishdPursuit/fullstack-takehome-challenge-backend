@@ -12,7 +12,14 @@ const getOneRaffle = async (id) => {
     return oneRaffle
 }
 
+// POST ONE Raffle
+const createRaffle = async (raffle) => {
+    const {raffle_name, secret_token} = raffle
+    const newRaffle = await db.oneOrNone("INSERT INTO raffles (raffle_name, secret_token) VALUES ($1, $2) RETURNING *;",[raffle_name, secret_token])
+    return newRaffle
+}
 module.exports = {
   getAllRaffles,
-  getOneRaffle
+  getOneRaffle,
+  createRaffle
 };

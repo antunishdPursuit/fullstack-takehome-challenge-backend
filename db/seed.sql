@@ -1,6 +1,6 @@
 \c takehome_dev;
 
-INSERT INTO raffles (name, secret_token, raffle_date, winner_id)
+INSERT INTO raffles (raffle_name, secret_token, raffle_date, winner_id)
 VALUES
     ('Raffle 1', 'token1', '2024-03-20 12:00:00', 1),
     ('Raffle 2', 'token2', '2024-03-21 12:00:00', 2),
@@ -17,3 +17,22 @@ VALUES
     ('Raffle 13', 'token13', null, null),
     ('Raffle 14', 'token14', '2024-04-02 12:00:00', 1),
     ('Raffle 15', 'token15', null, null);
+
+INSERT INTO participants (first_name, last_name, email, phone)
+VALUES
+    ('John', 'Doe', 'john.doe@example.com', '1234567890'),
+    ('Jane', 'Smith', 'jane.smith@example.com', null),
+    ('Alice', 'Johnson', 'alice.johnson@example.com', '5551234567'),
+    ('Bob', 'Brown', 'bob.brown@example.com', '9998887776'),
+    ('Emma', 'Davis', 'emma.davis@example.com', null),
+    ('Michael', 'Wilson', 'michael.wilson@example.com', '4445556666'),
+    ('Olivia', 'Martinez', 'olivia.martinez@example.com', '7778889999'),
+    ('James', 'Taylor', 'james.taylor@example.com', '2223334444'),
+    ('Sophia', 'Anderson', 'sophia.anderson@example.com', '6667778888'),
+    ('William', 'Thomas', 'william.thomas@example.com', '8889990000'),
+    ('Ella', 'Jackson', 'ella.jackson@example.com', '3334445555'),
+    ('Alexander', 'White', 'alexander.white@example.com', '1231231234'),
+    ('Ava', 'Harris', 'ava.harris@example.com', null),
+    ('Noah', 'Clark', 'noah.clark@example.com', '7897897890'),
+    ('Charlotte', 'Lewis', 'charlotte.lewis@example.com', '1010101010');
+

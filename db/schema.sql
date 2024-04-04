@@ -7,7 +7,7 @@ Drop TABLE IF EXISTS raffles;
 
 CREATE TABLE raffles (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    raffle_name TEXT NOT NULL,
     secret_token TEXT NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     winner_id INTEGER,
@@ -21,5 +21,5 @@ CREATE TABLE participants (
     first_name VARCHAR(255) UNIQUE NOT NULL,
     last_name VARCHAR(255) UNIQUE NOT NULL,
     email TEXT UNIQUE NOT NULL,
-    phone INTEGER
+    phone VARCHAR(255)
 );

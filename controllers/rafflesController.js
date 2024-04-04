@@ -3,23 +3,20 @@ const raffles = express.Router();
 const {
   getAllRaffles,
   getOneRaffle,
+  createRaffle,
 } = require("../queries/raffles.js");
 
-// GET all raffles /raffles
+// GET all raffles /api/raffles
 raffles.get("/", async (req, res) => {
     try {
         const allraffles = await getAllRaffles();
-        if (allraffles[0]) {
-            res.status(200).json(allraffles);
-        } else {
-            res.status(404).json({ data: "No raffles" });
-        }
+            res.status(404).json({ data: allraffles });
       } catch (err) {
         res.status(500).json({ error: err.message });
       }
 });
 
-// GET one raffles /raffles/:id
+// GET one raffles /api/raffles/:id
 raffles.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -32,6 +29,16 @@ raffles.get('/:id', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: err.message });
     }
-})
+});
+
+// POST one Raffle /api/raffles
+raffles.post('/', async (req, res) => {
+    try {
+        const createdRaffle = await createRaffle(req.body)
+        res.status(200).json(createdRaffle);
+    } catch (error) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 module.exports = raffles;
