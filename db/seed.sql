@@ -3,20 +3,16 @@
 INSERT INTO raffles (raffle_name, secret_token, raffle_date, winner_id)
 VALUES
     ('Raffle 1', 'token1', '2024-03-20 12:00:00', 1),
-    ('Raffle 2', 'token2', '2024-03-21 12:00:00', 2),
-    ('Raffle 3', 'token3', '2024-03-22 12:00:00', 3),
-    ('Raffle 4', 'token4', '2024-03-23 12:00:00', 2),
-    ('Raffle 5', 'token5', '2024-03-24 12:00:00', 10),
+    ('Raffle 2', 'token2', '2024-03-21 12:00:00', 5),
+    ('Raffle 3', 'token3', '2024-03-22 12:00:00', 9),
+    ('Raffle 4', 'token4', null, null),
+    ('Raffle 5', 'token5', null, null),
     ('Raffle 6', 'token6', null, null),
-    ('Raffle 7', 'token7', '2024-03-26 12:00:00', 1),
-    ('Raffle 8', 'token8', '2024-03-27 12:00:00', 6),
+    ('Raffle 7', 'token7', null, null),
+    ('Raffle 8', 'token8', null, null),
     ('Raffle 9', 'token9', null, null),
-    ('Raffle 10', 'token10', '2024-03-29 12:00:00', 1),
-    ('Raffle 11', 'token11', '2024-03-30 12:00:00', 5),
-    ('Raffle 12', 'token12', '2024-03-31 12:00:00', 11),
-    ('Raffle 13', 'token13', null, null),
-    ('Raffle 14', 'token14', '2024-04-02 12:00:00', 1),
-    ('Raffle 15', 'token15', null, null);
+    ('Raffle 10', 'token10', null, null),
+    ('Raffle 11', 'token11', null, null);
 
 INSERT INTO participants (first_name, last_name, email, phone)
 VALUES
@@ -52,5 +48,24 @@ VALUES
     (4, 12),
     (5, 13),
     (5, 14),
-    (5, 15);
+    (5, 15),
+    (6, 1),
+    (6, 2),
+    (6, 3),
+    (7, 4),
+    (7, 5),
+    (7, 6),
+    (8, 7),
+    (8, 8),
+    (8, 9),
+    (9, 10),
+    (9, 11),
+    (9, 12),
+    (10, 13),
+    (10, 14),
+    (10, 15),
+    (11, 1),
+    (11, 2),
+    (11, 3);
+
 
